@@ -1,25 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <script src="index.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Towers of Hanoi</title>
+    <!--bootstrap & style links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- link to JavaScript code -->
+    
   </head>
   <body>
-    <h1>Towers Of Hanoi</h1>
-    <hr/>
-      <div id="top-row" data-row="top" class="red row" onclick="selectRow(this)"></div>
-      <div id="middle-row" data-row="middle" class="yellow row" onclick="selectRow(this)"></div>
-      <div id="bottom-row" class="green row" data-row="bottom" onclick="selectRow(this)">
-        <div id="4" data-size="4" data-color="yellow" class="stone" ></div>
-        <div id="3" data-size="3" data-color="red" class="stone" ></div>
-        <div id="2" data-size="2" data-color="green" class="stone" ></div>
-        <div id="1" data-size="1" data-color="blue" class="stone" ></div>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Welcome to Towers of Hanoi!</h1>
+        <p>Get ready to play!</p>
+        <!-- uses the built-in onclick attribute to call the resetBoard function -->
+        <button onclick="resetBoard()" type="button" class="btn btn-primary btn-lg" name="button">Restart</button>
       </div>
-    <hr/>
+
+      <main >
+        <div class='stack-container'>
+          <div id="a" class="drop-container" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+            <div draggable="true" ondragstart="onDragStart(event);" id = '1' class="box box1"></div>
+          <div draggable="true" ondragstart="onDragStart(event);" id = '2' class="box box2"></div>
+          <div draggable="true" ondragstart="onDragStart(event);"id = '3' class="box box3"></div>
+          <div draggable="true" ondragstart="onDragStart(event);"id = '4' class="box box4"></div>
+          </div>
+          
+          <div class="base"></div>
+        </div>
+        <div class='stack-container'>
+            <div id="b" class="drop-container" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+            
+            </div>
+            
+            <div class="base"></div>
+          </div><div class='stack-container'>
+            <div id="c" class="drop-container" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+              
+            </div>
+            
+            <div class="base"></div>
+          </div>
+    </main>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
-
-
-
